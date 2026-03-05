@@ -1,0 +1,252 @@
+/* ===== 2026 AURORA GLASS DESIGN ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+  background: #0f172a;
+  position: relative;
+}
+
+/* ===== Animated Aurora Background ===== */
+/* ===== 2026 Premium Liquid Mesh Background ===== */
+
+body {
+  margin: 0;
+  background: #0f172a;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Main animated layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  background: radial-gradient(at 30% 40%, #7c3aed 0px, transparent 50%),
+              radial-gradient(at 70% 60%, #06b6d4 0px, transparent 50%),
+              radial-gradient(at 50% 20%, #f43f5e 0px, transparent 50%);
+  animation: liquidMove 20s ease-in-out infinite alternate;
+  z-index: -2;
+  filter: blur(120px);
+  opacity: 0.7;
+}
+
+/* Soft noise overlay for premium texture */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 70%);
+  z-index: -1;
+}
+
+/* Animation */
+@keyframes liquidMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-100px, 80px) scale(1.2);
+  }
+  100% {
+    transform: translate(80px, -60px) scale(1.1);
+  }
+}
+/* ===== Main Card ===== */
+
+.main-card {
+  width: 100%;
+  max-width: 620px;
+  background:transparent;
+  backdrop-filter: blur(25px);
+  border-radius: 28px;
+  padding: 45px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: cardFade 1s ease;
+}
+
+@keyframes cardFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+}
+
+/* ===== Input Section ===== */
+
+.input-area {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 15px 22px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.input-area input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-area input:focus {
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 20px #7c3aed;
+}
+
+#addBtn {
+  padding: 15px 28px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+#addBtn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5);
+}
+
+/* ===== Quote List ===== */
+
+#quoteList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+/* ===== Quote Card ===== */
+
+#quoteList li {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 22px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#quoteList li:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Buttons Row ===== */
+
+.edit-btn,
+.del-btn {
+  border: none;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.3s ease;
+}
+
+/* Edit Button */
+
+.edit-btn {
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  color: #fff;
+  margin-left: 2%;
+}
+
+.edit-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Delete Button */
+
+.del-btn {
+  background: linear-gradient(135deg, #f43f5e, #fb7185);
+  color: #fff;
+  margin-left: 5%;
+}
+
+.del-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(244, 63, 94, 0.5);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+
+  .main-card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  .edit-btn,
+  .del-btn {
+    width: 100%;
+    margin-top: 6px;
+  }
+}
