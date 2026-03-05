@@ -31,13 +31,6 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    // apiKey: "AIzaSyAlW7q-eNUoKDsw6BOGKLv5kQPnaghCyHQ",
-    // authDomain: "e-comerrece-website.firebaseapp.com",
-    // projectId: "e-comerrece-website",
-    // storageBucket: "e-comerrece-website.firebasestorage.app",
-    // messagingSenderId: "436316035613",
-    // appId: "1:436316035613:web:d7c6f139ab27912953c4f4"
-
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
