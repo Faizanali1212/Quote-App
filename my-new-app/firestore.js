@@ -35,10 +35,10 @@ async function addQuote() {
 }
 
 async function getQuote() {
-const querySnapshot = await getDocs(qutoCollection);      
+const querySnapshot = onSnapshot(qutoCollection, (snapshot) => {
     const ulBox = document.getElementById("quoteList");
     ulBox.innerHTML = ""; 
-    querySnapshot.forEach((doc) => {
+    snapshot.forEach((doc) => {
       console.log(doc.id, " => ", doc.data());
       const li = document.createElement("li");
 
@@ -72,7 +72,8 @@ const querySnapshot = await getDocs(qutoCollection);
       li.appendChild(delBtnEl);
       li.appendChild(editBtnEl);
     });
-  }; 
+  });
+}
 
 
 getQuote();
