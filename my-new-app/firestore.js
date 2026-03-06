@@ -31,7 +31,6 @@ async function addQuote() {
     time: serverTimestamp(),
   });
   codeInput.value = ""; 
-  getQuote();
 }
 
 async function getQuote() {
@@ -82,9 +81,7 @@ async function editBtn(id, oldQuto) {
   await updateDoc(doc(db, "quotes", id), {
     quto: newQuto,
   });
-  getQuote();
 }
 async function deleteBtn(id) {
   await deleteDoc(doc(db, "quotes", id));
- getQuote();
 }
